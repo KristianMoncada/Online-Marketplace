@@ -5,7 +5,7 @@
 {% block content %}
 <h1 class="mb-6 text-3xl">{{ title }}</h1>
 
-<form method="post" action="{% url 'item:edit' item.id %}" enctype="multipart/form-data">
+<form method="post" action="{% if item %}{% url 'item:edit' item.id %}{% else %}{% url 'item:new' %}{% endif %}" enctype="multipart/form-data">
     {% csrf_token %}
 
     <div class="space-y-4">

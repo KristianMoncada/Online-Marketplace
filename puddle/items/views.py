@@ -81,6 +81,7 @@ def new(request):
     return render(request, 'item/form.html', {
         'form': form,
         'title': 'New Item',
+        'item': None,
     })
 
 @login_required
